@@ -366,7 +366,7 @@ export default {
       } catch {}
     },
     onStreamTypeChange() {
-      // localStorage と Cookie の両方に保存（沙箱環境対応）
+      // localStorage と Cookie の両方に保存
       try {
         localStorage.setItem("defaultPlaybackMode", this.localStreamType);
       } catch (e) {

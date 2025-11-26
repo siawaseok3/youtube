@@ -26,7 +26,7 @@ function getDefaultStreamType() {
     if (props.streamType) {
       return props.streamType;
     }
-    // localStorage から読み込む（沙箱環境での Cookie 制限に対応）
+    // localStorage から読み込む
     const fromStorage = localStorage.getItem("defaultPlaybackMode");
     if (fromStorage) {
       return fromStorage;
@@ -55,7 +55,6 @@ function onEnded(payload) {
 }
 
 function onPlayAutoplayCandidate({ id }) {
-  // 次の動画IDに切り替える（プリフェッチ廃止）
   if (id) {
     emit('play-autoplay-candidate', { id });
   }
